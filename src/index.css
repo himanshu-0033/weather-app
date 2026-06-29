@@ -1,0 +1,356 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: #121212;
+  color: #e0e0e0;
+  min-height: 100vh;
+}
+
+a {
+  color: #90a4ae;
+}
+a:hover {
+  color: #cfd8dc;
+}
+
+/* ---- App Shell ---- */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Navbar ---- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.unit-switch {
+  display: flex;
+  background: #1e1e1e;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.unit-switch button {
+  background: none;
+  border: none;
+  padding: 6px 14px;
+  color: #666;
+  font-size: 0.82rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.unit-switch button.active {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.unit-switch button:hover:not(.active) {
+  color: #aaa;
+}
+
+/* ---- Main Content ---- */
+.main {
+  flex: 1;
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ---- Search ---- */
+.search-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.search-input {
+  flex: 1;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.search-input:focus {
+  border-color: #444;
+}
+
+.search-input::placeholder {
+  color: #555;
+}
+
+.search-btn {
+  background: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0 16px;
+  color: #121212;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.15s;
+}
+
+.search-btn:hover {
+  opacity: 0.85;
+}
+
+.search-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* ---- Error ---- */
+.error-box {
+  background: #2a1515;
+  border: 1px solid #3d2020;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 24px;
+}
+
+.error-box p {
+  color: #e57373;
+  font-size: 0.85rem;
+}
+
+/* ---- Loader ---- */
+.loader {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 48px 0;
+}
+
+.loader-dot {
+  width: 8px;
+  height: 8px;
+  background: #444;
+  border-radius: 50%;
+  animation: bounce 1.2s infinite;
+}
+
+.loader-dot:nth-child(2) { animation-delay: 0.15s; }
+.loader-dot:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-8px); }
+}
+
+/* ---- Empty State ---- */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-state p {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* ---- Weather Card ---- */
+.card {
+  background: #1a1a1a;
+  border: 1px solid #252525;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 24px 0;
+}
+
+.card-city {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.card-desc {
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: capitalize;
+  margin-top: 2px;
+}
+
+.card-icon {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+}
+
+/* ---- Temp Row ---- */
+.card-temp-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 8px 24px 20px;
+}
+
+.card-temp {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.card-temp-extra {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.card-temp-extra span {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* ---- Stats Grid ---- */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid #252525;
+}
+
+.card-stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 24px;
+  border-bottom: 1px solid #252525;
+}
+
+.card-stat:nth-child(odd) {
+  border-right: 1px solid #252525;
+}
+
+.stat-icon {
+  font-size: 1.4rem;
+  color: #555;
+}
+
+.stat-val {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ddd;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* ---- Sun Row ---- */
+.card-sun-row {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  padding: 16px 24px;
+}
+
+.sun-block {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sun-ic {
+  font-size: 1.4rem;
+  color: #666;
+}
+
+.sun-label {
+  font-size: 0.68rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.sun-val {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ddd;
+}
+
+/* ---- Footer ---- */
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.72rem;
+  color: #444;
+  border-top: 1px solid #1e1e1e;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .main {
+    padding: 24px 16px;
+  }
+
+  .card-top {
+    padding: 16px 16px 0;
+  }
+
+  .card-temp-row {
+    padding: 8px 16px 16px;
+  }
+
+  .card-temp {
+    font-size: 2.4rem;
+  }
+
+  .card-stat {
+    padding: 12px 16px;
+  }
+
+  .card-sun-row {
+    gap: 24px;
+    padding: 12px 16px;
+  }
+}
