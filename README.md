@@ -11,12 +11,12 @@ I built this to practice working with APIs, component architecture, state manage
 - **Search any city** worldwide and get instant weather data
 - **GPS location** — click the location button to get weather for your exact position (works even for small villages)
 - **Dynamic themes** — the entire background changes based on weather:
-  - ☀️ Clear → blue sky with animated sun rays and floating light particles
-  - 🌧️ Rain → dark grey with animated falling raindrops
-  - ⛈️ Thunderstorm → deep purple with rain + periodic lightning flashes
-  - ❄️ Snow → icy blue with drifting snowflakes
-  - ☁️ Cloudy → muted grey with drifting cloud shapes
-  - 🌫️ Mist/Fog → soft grey with moving fog layers
+  -  Clear → blue sky with animated sun rays and floating light particles
+  -  Rain → dark grey with animated falling raindrops
+  -  Thunderstorm → deep purple with rain + periodic lightning flashes
+  -  Snow → icy blue with drifting snowflakes
+  -  Cloudy → muted grey with drifting cloud shapes
+  -  Mist/Fog → soft grey with moving fog layers
 - **Temperature trend graph** — smooth SVG curve showing temperature changes over the next 24 hours, with a red-to-green gradient
 - **Hourly forecast** — scrollable row showing weather for the next 24 hours with icons, rain probability, and temperatures
 - **5-day daily forecast** — shows each day's weather icon, rain chance, and high/low temperatures
