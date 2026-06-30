@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { IoSearch } from 'react-icons/io5';
+import { MdMyLocation } from 'react-icons/md';
 
-function SearchBar({ onSearch, isLoading }) {
+function SearchBar({ onSearch, onLocate, isLoading }) {
   const [city, setCity] = useState('');
 
   const handleSubmit = (e) => {
@@ -28,8 +29,19 @@ function SearchBar({ onSearch, isLoading }) {
         type="submit"
         className="search-btn"
         disabled={isLoading || !city.trim()}
+        title="Search"
       >
         <IoSearch />
+      </button>
+      <button
+        id="locate-button"
+        type="button"
+        className="search-btn locate-btn"
+        disabled={isLoading}
+        onClick={onLocate}
+        title="Use my location"
+      >
+        <MdMyLocation />
       </button>
     </form>
   );
