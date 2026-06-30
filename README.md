@@ -104,6 +104,3 @@ Uses the [OpenWeatherMap Current Weather API](https://openweathermap.org/current
 GET https://api.openweathermap.org/data/2.5/weather?q={city}&appid={key}&units=metric
 ```
 
-## License
-
-MIT
